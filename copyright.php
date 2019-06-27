@@ -1,0 +1,1 @@
+<div class="copyright">U2NyaXB0IGRvd25sb2FkZWQgZnJvbSBDT0RFTElTVC5DQw==</div>
