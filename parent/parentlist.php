@@ -45,7 +45,7 @@ if(isset($_GET['m']) && $_GET['m'] == 'u'){
       <thead>
         <tr>
           <th>Image</th>
-          <th>Guardiun Name</th>
+          <th>Guardian Name</th>
 		  <th>Father's Name</th>
 		  <th>Mother's Name</th>
           <th>Email</th>

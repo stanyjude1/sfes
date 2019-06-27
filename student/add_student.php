@@ -224,18 +224,18 @@ function uploadImage(){
             </div>
           </div>
           <span class="col-sm-4 control-label col-xs-6 col-md-4"> </span> </div>
-        <div class="form-group">
+        <!-- <div class="form-group">
           <label class="col-sm-2 control-label" for="txtStProfileName"> Profile Name * </label>
           <div class="col-sm-6">
-            <input type="text" value="<?php echo $s_profile_name;?>" name="txtStProfileName" id="txtStProfileName" class="form-control">
+            <input type="text" value="<?php //echo $s_profile_name;?>" name="txtStProfileName" id="txtStProfileName" class="form-control">
           </div>
           <span class="col-sm-4 control-label"> </span> </div>
         <div class="form-group">
           <label class="col-sm-2 control-label" for="StPassword"> Password * </label>
           <div class="col-sm-6">
-            <input type="password" value="<?php echo $s_password;?>" name="StPassword" id="StPassword" class="form-control">
+            <input type="password" value="<?php //echo $s_password;?>" name="StPassword" id="StPassword" class="form-control">
           </div>
-          <span class="col-sm-4 control-label"> </span> </div>
+          <span class="col-sm-4 control-label"> </span> </div> -->
         <div class="form-group">
           <div class="col-sm-offset-2 col-sm-8">
             <input type="submit" value="<?php echo $button_text;?>" class="btn btn-success">
@@ -281,16 +281,16 @@ function validationForm(){
 		$("#txtStRollNo").focus();
 		return false;
 	}
-	else if($("#txtStProfileName").val() == ''){
-		alert("Profile Name is Required !!!");
-		$("#txtStProfileName").focus();
-		return false;
-	}
-	else if($("#StPassword").val() == ''){
-		alert("Password is Required !!!");
-		$("#StPassword").focus();
-		return false;
-	}
+	// else if($("#txtStProfileName").val() == ''){
+	// 	alert("Profile Name is Required !!!");
+	// 	$("#txtStProfileName").focus();
+	// 	return false;
+	// }
+	// else if($("#StPassword").val() == ''){
+	// 	alert("Password is Required !!!");
+	// 	$("#StPassword").focus();
+	// 	return false;
+	// }
 	else{
 		return true;
 	}

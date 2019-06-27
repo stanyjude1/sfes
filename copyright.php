@@ -1,1 +1,1 @@
-<div class="copyright">U2NyaXB0IGRvd25sb2FkZWQgZnJvbSBDT0RFTElTVC5DQw==</div>
+<div class="copyright">Copyright 2019 St. Francis Education Society<br />Powered by <a href="https://iugale.tech/">Team Iugale</a></div>

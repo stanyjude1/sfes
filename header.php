@@ -15,7 +15,7 @@ if(!isset($_SESSION['objLogin'])){header('Location: index.php');die();}
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>School Management System</title>
+<title>SFES</title>
 <link type="text/css" href="<?php echo WEB_URL; ?>css/style.css" rel="stylesheet" />
 <link rel="stylesheet" href="<?php echo WEB_URL; ?>js/jquery-ui.css">
 <script src="<?php echo WEB_URL; ?>js/jquery-1.10.2.js"></script>

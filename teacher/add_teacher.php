@@ -216,18 +216,20 @@ function uploadImage(){
               </div>
             </div>
             <span class="col-sm-4 control-label col-xs-6 col-md-4"> </span> </div>
-          <div class="form-group">
+          <!-- <div class="form-group">
             <label class="col-sm-2 control-label" for="txtTrProfile"> Profile Name * </label>
             <div class="col-sm-6">
-              <input type="text" value="<?php echo $t_username;?>" name="txtTrProfile" id="txtTrProfile" class="form-control">
+              <input type="text" value="<?php //echo $t_username;?>" name="txtTrProfile" id="txtTrProfile" class="form-control">
             </div>
             <span class="col-sm-4 control-label"> </span> </div>
           <div class="form-group">
             <label class="col-sm-2 control-label" for="password"> Password * </label>
             <div class="col-sm-6">
-              <input type="password" value="<?php echo $t_password;?>" name="password" id="password" class="form-control">
+              <input type="password" value="<?php //echo $t_password;?>" name="password" id="password" class="form-control">
             </div>
-            <span class="col-sm-4 control-label"> </span> </div>
+            <span class="col-sm-4 control-label"> </span> </div> -->
+            <input type="hidden" name="txtTrProfile" id="txtTrProfile" value="teacherusername">
+            <input type="hidden" name="password" id="password" value="password">
           <div class="form-group">
             <div class="col-sm-offset-2 col-sm-8">
               <input type="submit" value="<?php echo $button_text;?>" class="btn btn-success">
@@ -267,16 +269,16 @@ function validationForm(){
 		$("#txtTrDesignation").focus();
 		return false;
 	}
-	else if($("#txtTrProfile").val() == ''){
-		alert("Profile Name is Required !!!");
-		$("#txtTrProfile").focus();
-		return false;
-	}
-	else if($("#password").val() == ''){
-		alert("Password is Required !!!");
-		$("#password").focus();
-		return false;
-	}
+	// else if($("#txtTrProfile").val() == ''){
+	// 	alert("Profile Name is Required !!!");
+	// 	$("#txtTrProfile").focus();
+	// 	return false;
+	// }
+	// else if($("#password").val() == ''){
+	// 	alert("Password is Required !!!");
+	// 	$("#password").focus();
+	// 	return false;
+	// }
 	else{
 		return true;
 	}

@@ -40,9 +40,9 @@
   ?>
 <div class="content content_inside">
   <div class="header_text">
-    <div class="header_text_left">Schedule Setup</div>
+    <div class="header_text_left">Exam Name Setup</div>
     <div class="top_common_bar">
-      <div class="obj_right"><a class="btn btn-success" href="<?php echo WEB_URL; ?>settings/setting.php">Setting</a></div>
+      <div class="obj_right"><a class="btn btn-success" href="<?php echo WEB_URL; ?>settings/setting.php">Settings</a></div>
     </div>
   </div>
   <!-- start insert department name-->
@@ -51,7 +51,7 @@
       <form action="" method="post" enctype="multipart/form-data" accept-charset="utf-8">
         <div class="box-body">
           <div class="form-group">
-            <label for="txtPurchaseItemCharge">Schedule Name :</label>
+            <label for="txtPurchaseItemCharge">Exam Name :</label>
             <input type="text" name="txtScheduleName" value="<?php echo $schedule_name; ?>" id="txtScheduleName" class="form-control"/>
           </div>
           <div class="form-group pull-right">
@@ -74,7 +74,7 @@
           <thead>
             <tr>
               <th>ID#</th>
-              <th>Schedule</th>
+              <th>Exam Name</th>
               <th>Action</th>
             </tr>
           </thead>

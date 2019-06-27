@@ -71,10 +71,10 @@ $s_image = WEB_URL . 'img/upload/' . $row['s_image'];
               <td><strong>Religion:</strong></td>
               <td><?php echo $row['s_religion'];?></td>
             </tr>
-            <tr>
+            <!-- <tr>
               <td><strong>Profile Name:</strong></td>
-              <td><?php echo $row['s_profile_name'];?></td>
-            </tr>
+              <td><?php //echo $row['s_profile_name'];?></td>
+            </tr> -->
           </table>
         </div>
       </div>

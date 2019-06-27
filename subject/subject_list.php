@@ -59,7 +59,7 @@ if(isset($_GET['m']) && $_GET['m'] == 'u'){
           <th>Subject Author</th>
           <th>Subject Code</th>
           <th>Class Name</th>
-		  <th>Class Teacher</th>
+		      <th>Subject Teacher</th>
           <th>Action</th>
         </tr>
       </thead>

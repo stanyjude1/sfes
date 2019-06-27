@@ -78,25 +78,25 @@ if(isset($_GET['id']) && $_GET['id'] != ''){
       <div class="frmstyle">
         <form enctype="multipart/form-data" onSubmit="return validationForm();" method="post" role="form" class="form-horizontal">
           <div class="form-group">
-            <label class="col-sm-2 control-label" for="txtSbName"> Subject Name * </label>
+            <label class="col-sm-3 control-label" for="txtSbName"> Subject Name * </label>
             <div class="col-sm-6">
               <input type="text" value="<?php echo $sb_name;?>" name="txtSbName" id="txtSbName" class="form-control">
             </div>
             <span class="col-sm-4 control-label"> </span> </div>
             <div class="form-group">
-            <label class="col-sm-2 control-label" for="txtSbAuthor"> Author Name * </label>
+            <label class="col-sm-3 control-label" for="txtSbAuthor"> Author/Syllabus Name </label>
             <div class="col-sm-6">
               <input type="text" value="<?php echo $sb_author;?>" name="txtSbAuthor" id="txtSbAuthor" class="form-control">
             </div>
             <span class="col-sm-4 control-label"> </span> </div>
              <div class="form-group">
-            <label class="col-sm-2 control-label" for="txtSbCode"> Subject Code * </label>
+            <label class="col-sm-3 control-label" for="txtSbCode"> Subject Code </label>
             <div class="col-sm-6">
               <input type="text" value="<?php echo $sb_code;?>" name="txtSbCode" id="txtSbCode" class="form-control">
             </div>
             <span class="col-sm-4 control-label"> </span> </div>
             <div class="form-group">
-            <label class="col-sm-2 control-label" for="dllClassId"> Class Name * </label>
+            <label class="col-sm-3 control-label" for="dllClassId"> Class Name * </label>
             <div class="col-sm-6">
               <select class="form-control" id="dllClassId" name="dllClassId">
                <option value="">--Select--</option>
@@ -110,7 +110,7 @@ if(isset($_GET['id']) && $_GET['id'] != ''){
             </div>
             <span class="col-sm-4 control-label"> </span> </div>
              <div class="form-group">
-            <label class="col-sm-2 control-label" for="dllTeacherId"> Class Teacher * </label>
+            <label class="col-sm-3 control-label" for="dllTeacherId"> Subject Teacher * </label>
             <div class="col-sm-6">
               <select class="form-control" id="dllTeacherId" name="dllTeacherId">
                <option value="">--Select--</option>
@@ -124,7 +124,7 @@ if(isset($_GET['id']) && $_GET['id'] != ''){
             </div>
             <span class="col-sm-4 control-label"> </span> </div>       
           <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-8">
+            <div class="col-sm-offset-3 col-sm-8">
               <input type="submit" value="<?php echo $button_text;?>" class="btn btn-success">
             </div>
           </div>
@@ -143,16 +143,16 @@ function validationForm(){
 		$("#txtSbName").focus();
 		return false;
 	}
-	else if($("#txtSbAuthor").val() == ''){
-		alert("Subject Author is Required !!!");
-		$("#txtSbAuthor").focus();
-		return false;
-	}
-	else if($("#txtSbCode").val() == ''){
-		alert("Subject Code is Required !!!");
-		$("#txtSbCode").focus();
-		return false;
-	}
+	// else if($("#txtSbAuthor").val() == ''){
+	// 	alert("Subject Author is Required !!!");
+	// 	$("#txtSbAuthor").focus();
+	// 	return false;
+	// }
+	// else if($("#txtSbCode").val() == ''){
+	// 	alert("Subject Code is Required !!!");
+	// 	$("#txtSbCode").focus();
+	// 	return false;
+	// }
 	else if($("#dllClassId").val() == ''){
 		alert("Class Name is Required !!!");
 		$("#dllClassId").focus();

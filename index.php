@@ -78,7 +78,7 @@ function make_safe($variable)
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>SAKO School Management System</title>
+<title>SFES | HOME</title>
 <!-- BOOTSTRAP STYLES-->
 <link href="assets/css/bootstrap.css" rel="stylesheet" />
 <!-- FONTAWESOME STYLES-->
@@ -92,7 +92,8 @@ function make_safe($variable)
 <div class="container">
   <div class="row text-center ">
     <div class="col-md-12"> <br />
-      <img style="width:105px;height:100px;" src="<?php echo WEB_URL; ?>img/upload/1827155dea48642c1d.png" /> </div>
+    	St. Francis Education Society | Admin Login
+      <!-- <img style="width:105px;height:100px;" src="<?php echo WEB_URL; ?>img/upload/1827155dea48642c1d.png" /> </div> -->
   </div>
   <div class="row ">
     <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
@@ -108,7 +109,7 @@ function make_safe($variable)
             <div class="form-group input-group"> <span class="input-group-addon"><i class="fa fa-lock"  ></i></span>
               <input type="password" name="password" id="password" class="form-control"  placeholder="Your Password" />
             </div>
-            <div class="form-group input-group"> <span class="input-group-addon"><i class="fa fa-user"  ></i></span>
+            <!-- <div class="form-group input-group"> <span class="input-group-addon"><i class="fa fa-user"  ></i></span>
               <select name="ddlLoginType" id="ddlLoginType" class="form-control">
                 <option value="-1">-- Select --</option>
                 <option value="admin">Admin</option>
@@ -118,11 +119,12 @@ function make_safe($variable)
                 <option value="accountant">Accountant</option>
 				<option value="librarian">Librarian</option>
               </select>
-            </div>
-            <div class="form-group">
+            </div> -->
+            <input type="hidden" name="ddlLoginType" id="ddlLoginType" value="admin">
+           <!--  <div class="form-group">
               <label class="checkbox-inline">
               </label>
-              <span class="pull-right"> <a href="<?php echo WEB_URL;?>forgetpassword.php" >Forget password ? </a> </span> </div>
+              <span class="pull-right"> <a href="<?php echo WEB_URL;?>forgetpassword.php" >Forget password ? </a> </span> </div> -->
             <hr />
             <div align="center">
               <button style="width:100%;" type="submit" id="login" class="btn btn-primary">Login</button>

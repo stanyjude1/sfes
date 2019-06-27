@@ -74,9 +74,9 @@
 	
   ?>
 <div class="content">
-  <div class="header_text">Routine Setup</div>
+  <div class="header_text">Day of Week Setup</div>
   <div align="right" style="margin-right:20px;">
-    <div style="margin-left:800px;" class="header_text_right_list"><a class="btn btn-success" href="<?php echo WEB_URL; ?>settings/setting.php">Setting</a></div>
+    <div style="margin-left:800px;" class="header_text_right_list"><a class="btn btn-success" href="<?php echo WEB_URL; ?>settings/setting.php">Settings</a></div>
   </div>
   <div>
     <!-- start insert department name-->

@@ -25,10 +25,10 @@
       <div class="link_box_img dashboard_image"><a href="<?php echo WEB_URL; ?>account/t_salarylist.php"><img height="80" width="80" src="<?php echo WEB_URL; ?>img/t_salary.png"></a></div>
       <div class="link_box_text">Tearcher Salary</div>
     </div>
-    <div class="link_box">
-      <div class="link_box_img dashboard_image"><a href="<?php echo WEB_URL; ?>account/e_salarylist.php"><img height="80" width="80" src="<?php echo WEB_URL; ?>img/e_salary.png"></a></div>
+    <!-- <div class="link_box">
+      <div class="link_box_img dashboard_image"><a href="<?php //echo WEB_URL; ?>account/e_salarylist.php"><img height="80" width="80" src="<?php //echo WEB_URL; ?>img/e_salary.png"></a></div>
       <div class="link_box_text">Employee Salery</div>
-    </div>
+    </div> -->
     <div class="link_box">
       <div class="link_box_img dashboard_image"><a href="<?php echo WEB_URL; ?>account/fee_type_list.php"><img height="80" width="80" src="<?php echo WEB_URL; ?>img/ct.png"></a></div>
       <div class="link_box_text">Type Of Fee</div>
@@ -37,18 +37,18 @@
       <div class="link_box_img dashboard_image"><a href="<?php echo WEB_URL; ?>account/fee_set_list.php"><img height="80" width="80" src="<?php echo WEB_URL; ?>img/fee.png"></a></div>
       <div class="link_box_text">Fee Setup</div>
     </div>
-    <div class="link_box">
-      <div class="link_box_img dashboard_image"><a href="<?php echo WEB_URL; ?>account/expense_list.php"><img height="80" width="80" src="<?php echo WEB_URL; ?>img/expense.png"></a></div>
+    <!-- <div class="link_box">
+      <div class="link_box_img dashboard_image"><a href="<?php //echo WEB_URL; ?>account/expense_list.php"><img height="80" width="80" src="<?php //echo WEB_URL; ?>img/expense.png"></a></div>
       <div class="link_box_text">Expense Setup</div>
     </div>
 	<div class="link_box">
-      <div class="link_box_img dashboard_image3"><a href="<?php echo WEB_URL; ?>account/transport_fee_list.php"><img height="80" width="80" src="<?php echo WEB_URL; ?>img/tpfee.png"></a></div>
+      <div class="link_box_img dashboard_image3"><a href="<?php //echo WEB_URL; ?>account/transport_fee_list.php"><img height="80" width="80" src="<?php //echo WEB_URL; ?>img/tpfee.png"></a></div>
       <div class="link_box_text">Transport Fee</div>
     </div>
 	<div class="link_box">
-      <div class="link_box_img dashboard_image3"><a href="<?php echo WEB_URL; ?>account/hostel_fee_list.php"><img height="80" width="80" src="<?php echo WEB_URL; ?>img/hostel.png"></a></div>
+      <div class="link_box_img dashboard_image3"><a href="<?php //echo WEB_URL; ?>account/hostel_fee_list.php"><img height="80" width="80" src="<?php //echo WEB_URL; ?>img/hostel.png"></a></div>
       <div class="link_box_text">Hostel Fee</div>
-    </div>
+    </div> -->
     <div style="clear:both"></div>
   </div>
   <br/>

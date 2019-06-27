@@ -32,7 +32,7 @@ if(isset($_GET['m']) && $_GET['m'] == 'u'){
   <div class="header_text">
     <div class="header_text_left">School Information List</div>
     <div class="top_common_bar">
-      <div class="obj_right"> <a class="btn btn_add_new btn-success" href="<?php echo WEB_URL; ?>settings/school_setup.php"><i class="fa fa-plus"></i>&nbsp;Add School Info</a>&nbsp;<a class="btn btn_add_new btn-success" href="<?php echo WEB_URL; ?>settings/setting.php"><i class="fa"></i>Setting</a></div>
+      <div class="obj_right"> <a class="btn btn_add_new btn-success" href="<?php echo WEB_URL; ?>settings/school_setup.php"><i class="fa fa-plus"></i>&nbsp;Add School Info</a>&nbsp;<a class="btn btn_add_new btn-success" href="<?php echo WEB_URL; ?>settings/setting.php"><i class="fa"></i>Settings</a></div>
     </div>
   </div>
   <div style="clear:both;"></div>

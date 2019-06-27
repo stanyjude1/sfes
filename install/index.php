@@ -33,7 +33,7 @@ function importDatabase($mysql_host,$mysql_database,$mysql_user,$mysql_password)
 
 function write_config_files($options) {
 	$output  = '<?php' . "\n";
-	$output .= 'define(\'CURRENCY\', \'USD\');' . "\n";
+	$output .= 'define(\'CURRENCY\', \'Rs. \');' . "\n";
 	$output .= 'define(\'WEB_URL\', \'' . $options['server'] . '\');' . "\n";
 	$output .= 'define(\'ROOT_PATH\', \'' . $options['root'] . '\');' . "\n\n\n";
 	

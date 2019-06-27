@@ -44,7 +44,7 @@
   <div class="header_text">
     <div class="header_text_left">Month Setup</div>
     <div class="top_common_bar">
-      <div class="obj_right"><a class="btn btn-success" href="<?php echo WEB_URL; ?>settings/setting.php">Setting</a></div>
+      <div class="obj_right"><a class="btn btn-success" href="<?php echo WEB_URL; ?>settings/setting.php">Settings</a></div>
     </div>
   </div>
   <div class="row">

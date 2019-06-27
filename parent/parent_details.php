@@ -25,6 +25,9 @@ $s_email = '';
 $s_contact = '';
 $s_address = '';
 $s_profile_name = '';
+$p_father_aadhaar = '';
+$p_mother_aadhaar = '';
+$p_permanentaddress = '';
 
 $result = mysql_query("Select * from tbl_add_parent where p_id='".$_GET['id']."'",$link);
 if($row = mysql_fetch_array($result)){
@@ -39,6 +42,9 @@ if($row = mysql_fetch_array($result)){
 	$p_contact = $row['p_contact'];
 	$p_address = $row['p_address'];
 	$p_profile_name = $row['p_profile_name'];
+  $p_father_aadhaar = $row['p_father_aadhaar'];
+  $p_mother_aadhaar = $row['p_mother_aadhaar'];
+  $p_permanentaddress = $row['p_permanentaddress'];
 }
 ?>
       <div align="center" style="width:100%;"><img class="img_ratio img-circle" src="<?php echo $p_image;  ?>"></div>
@@ -55,12 +61,20 @@ if($row = mysql_fetch_array($result)){
               <td><?php echo $p_father_name; ?></td>
             </tr>
             <tr>
+              <td><strong>Father's Aadhaar:</strong></td>
+              <td><?php echo $p_father_aadhaar; ?></td>
+            </tr>
+            <tr>
               <td><strong>Profession:</strong></td>
               <td><?php echo $p_father_profession; ?></td>
             </tr>
             <tr>
               <td><strong>Mother's Name:</strong></td>
               <td><?php echo $p_mother_name;?></td>
+            </tr>
+            <tr>
+              <td><strong>Mother's Aadhaar:</strong></td>
+              <td><?php echo $p_mother_aadhaar;?></td>
             </tr>
             <tr>
               <td><strong>Email:</strong></td>
@@ -71,12 +85,12 @@ if($row = mysql_fetch_array($result)){
               <td><?php echo $p_contact;?></td>
             </tr>
             <tr>
-              <td><strong>Address:</strong></td>
+              <td><strong>Current Address:</strong></td>
               <td><?php echo $p_address;?></td>
             </tr>
             <tr>
-              <td><strong>Profile Name:</strong></td>
-              <td><?php echo $p_profile_name;?></td>
+              <td><strong>Permanent Address:</strong></td>
+              <td><?php echo $p_permanentaddress;?></td>
             </tr>
           </table>
         </div>

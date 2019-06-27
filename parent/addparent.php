@@ -22,6 +22,9 @@ $p_religion =  "";
 $p_image =  "";
 $p_profile_name =  "";
 $p_password =  "";
+$p_father_aadhaar = "";
+$p_mother_aadhaar = "";
+$p_permanentaddress = "";
 $title = 'Add New Parent';
 $button_text="Save Information";
 $successful_msg="Add Parent Successfully";
@@ -35,7 +38,7 @@ $img_track = '';
 if(isset($_POST['txtStGuardianName'])){
 	if(isset($_POST['hdn']) && $_POST['hdn'] == '0'){
 	$image_url = uploadImage();	
-	$sql = "INSERT INTO `tbl_add_parent`(`p_guardian`, `p_father_name`, `p_father_profession`, `p_mother_name`, `p_mother_profession`, `p_email`, `p_contact`, `p_address`, `p_religion`, `p_image`, `p_profile_name`, `p_password`) VALUES ('$_POST[txtStGuardianName]','$_POST[txtStFatherName]','$_POST[txtStFatherProfession]','$_POST[txtStMotherName]','$_POST[txtStMotherProfession]','$_POST[txtPtEmail]','$_POST[txtPtContact]','$_POST[txtPtAddress]','$_POST[txtPtReligion]','$image_url','$_POST[txtPtProfileName]','$_POST[PtPassword]')";
+	$sql = "INSERT INTO `tbl_add_parent`(`p_guardian`, `p_father_name`, `p_father_profession`, `p_mother_name`, `p_mother_profession`, `p_email`, `p_contact`, `p_address`, `p_religion`, `p_image`, `p_profile_name`, `p_password`, `p_father_aadhaar`, `p_mother_aadhaar`, `p_permanentaddress`) VALUES ('$_POST[txtStGuardianName]','$_POST[txtStFatherName]','$_POST[txtStFatherProfession]','$_POST[txtStMotherName]','$_POST[txtStMotherProfession]','$_POST[txtPtEmail]','$_POST[txtPtContact]','$_POST[txtPtAddress]','$_POST[txtPtReligion]','$image_url','$_POST[txtPtProfileName]','$_POST[PtPassword]','$_POST[txtStFatherAadhaar]','$_POST[txtStMotherAadhaar]','$_POST[txtPtPermanentAddress]')";
 	mysql_query($sql,$link);
 	//here we make relation student to parent many
 	/*$p_id = mysql_insert_id();
@@ -58,7 +61,7 @@ else{
 			$image_url = $_POST['img_exist'];
 		}
 	
-	$sql = "UPDATE `tbl_add_parent` SET `p_guardian`='".$_POST['txtStGuardianName']."',`p_father_name`='".$_POST['txtStFatherName']."',`p_father_profession`='".$_POST['txtStFatherProfession']."',`p_mother_name`='".$_POST['txtStMotherName']."',`p_mother_profession`='".$_POST['txtStMotherProfession']."',`p_email`='".$_POST['txtPtEmail']."',`p_contact`='".$_POST['txtPtContact']."',`p_address`='".$_POST['txtPtAddress']."',`p_religion`='".$_POST['txtPtReligion']."',`p_image`='".$image_url."',`p_profile_name`='".$_POST['txtPtProfileName']."',`p_password`='".$_POST['PtPassword']."' WHERE p_id='".$_GET['id']."'";
+	$sql = "UPDATE `tbl_add_parent` SET `p_guardian`='".$_POST['txtStGuardianName']."',`p_father_name`='".$_POST['txtStFatherName']."',`p_father_profession`='".$_POST['txtStFatherProfession']."',`p_mother_name`='".$_POST['txtStMotherName']."',`p_mother_profession`='".$_POST['txtStMotherProfession']."',`p_email`='".$_POST['txtPtEmail']."',`p_contact`='".$_POST['txtPtContact']."',`p_address`='".$_POST['txtPtAddress']."',`p_religion`='".$_POST['txtPtReligion']."',`p_image`='".$image_url."',`p_profile_name`='".$_POST['txtPtProfileName']."',`p_password`='".$_POST['PtPassword']."', `p_father_aadhaar`='".$_POST['txtStFatherAadhaar']."', `p_mother_aadhaar`='".$_POST['txtStMotherAadhaar']."', `p_permanentaddress`='".$_POST['txtPtPermanentAddress']."' WHERE p_id='".$_GET['id']."'";
 	mysql_query($sql,$link);
 	mysql_close($link);
 	$redirect_url = WEB_URL . 'parent/parentlist.php?m=u';
@@ -88,6 +91,9 @@ if(isset($_GET['id']) && $_GET['id'] != ''){
 		$p_image = $row['p_image'];
 		$p_profile_name = $row['p_profile_name'];
 		$p_password = $row['p_password'];
+		$p_father_aadhaar = $row['p_father_aadhaar'];
+		$p_mother_aadhaar = $row['p_mother_aadhaar'];
+		$p_permanentaddress = $row['p_permanentaddress'];
 		$hdnid = $_GET['id'];
 		$title = 'Update Parent';
 		$button_text="Update Information";
@@ -131,7 +137,7 @@ function uploadImage(){
     <div class="frmstyle">
       <form enctype="multipart/form-data" onSubmit="return validationForm();" method="post" role="form" class="form-horizontal">
 		<div class="form-group">
-          <label class="col-sm-2 control-label" for="txtStGuardianName"></label>
+          <label class="col-sm-3 control-label" for="txtStGuardianName"></label>
 		  <div class="col-sm-6">
             <div id="add_student"></div>
 			<div style="clear:both;"></div>
@@ -139,55 +145,73 @@ function uploadImage(){
           <span class="col-sm-4 control-label"> </span>
 		</div>
         <div class="form-group">
-          <label class="col-sm-2 control-label" for="txtStGuardianName"> Gardiun Name * </label>
+          <label class="col-sm-3 control-label" for="txtStGuardianName"> Guardian Full Name* </label>
           <div class="col-sm-6">
             <input type="text" value="<?php echo $p_guardian;?>" name="txtStGuardianName" id="txtStGuardianName" class="form-control">
           </div>
           <span class="col-sm-4 control-label"> </span> </div>
         <div class="form-group">
-          <label class="col-sm-2 control-label" for="txtStFatherName"> Father's Name * </label>
+          <label class="col-sm-3 control-label" for="txtStFatherName"> Father's Full Name* </label>
           <div class="col-sm-6">
             <input type="text" value="<?php echo $p_father_name;?>" name="txtStFatherName" id="txtStFatherName" class="form-control">
           </div>
           <span class="col-sm-4 control-label"> </span> </div>
         <div class="form-group">
-          <label class="col-sm-2 control-label" for="txtStFatherProfession"> Profession </label>
+          <label class="col-sm-3 control-label" for="txtStFatherAadhaar"> Father's Aadhaar* </label>
+          <div class="col-sm-6">
+            <input type="text" value="<?php echo $p_father_aadhaar;?>" name="txtStFatherAadhaar" id="txtStFatherAadhaar" class="form-control" pattern="[0-9]{12}" title="Please enter exactly 12 digits">
+          </div>
+          <span class="col-sm-4 control-label"> </span> </div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label" for="txtStFatherProfession">Father's Profession </label>
           <div class="col-sm-6">
             <input type="text" value="<?php echo $p_father_profession;?>" name="txtStFatherProfession" id="txtStFatherProfession" class="form-control">
           </div>
           <span class="col-sm-4 control-label"> </span> </div>
         <div class="form-group">
-          <label class="col-sm-2 control-label" for="txtStMotherName"> Mother's Name </label>
+          <label class="col-sm-3 control-label" for="txtStMotherName"> Mother's Full Name </label>
           <div class="col-sm-6">
             <input type="text" value="<?php echo $p_mother_name;?>" name="txtStMotherName" id="txtStMotherName" class="form-control">
           </div>
           <span class="col-sm-4 control-label"> </span> </div>
         <div class="form-group">
-          <label class="col-sm-2 control-label" for="txtStMotherProfession"> Profession </label>
+          <label class="col-sm-3 control-label" for="txtStMotherAadhaar"> Mother's Aadhaar* </label>
+          <div class="col-sm-6">
+            <input type="text" value="<?php echo $p_mother_aadhaar;?>" name="txtStMotherAadhaar" id="txtStMotherAadhaar" class="form-control" pattern="[0-9]{12}" title="Please enter exactly 12 digits">
+          </div>
+          <span class="col-sm-4 control-label"> </span> </div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label" for="txtStMotherProfession"> Mother's Profession </label>
           <div class="col-sm-6">
             <input type="text" value="<?php echo $p_mother_profession;?>" name="txtStMotherProfession" id="txtStMotherProfession" class="form-control">
           </div>
           <span class="col-sm-4 control-label"> </span> </div>
         <div class="form-group">
-          <label class="col-sm-2 control-label" for="txtPtEmail"> Email * </label>
+          <label class="col-sm-3 control-label" for="txtPtEmail"> Email ID * </label>
           <div class="col-sm-6">
             <input type="text" value="<?php echo $p_email;?>" name="txtPtEmail" id="txtPtEmail" class="form-control">
           </div>
           <span class="col-sm-4 control-label"> </span> </div>
         <div class="form-group">
-          <label class="col-sm-2 control-label" for="txtPtContact"> Telephone * </label>
+          <label class="col-sm-3 control-label" for="txtPtContact"> Mobile Number * </label>
           <div class="col-sm-6">
-            <input type="text" value="<?php echo $p_contact;?>" name="txtPtContact" id="txtPtContact" class="form-control">
+            <input type="text" value="<?php echo $p_contact;?>" name="txtPtContact" id="txtPtContact" class="form-control" pattern="[6-9]{1}[0-9]{9}" title="Please enter exactly 10 digits">
           </div>
           <span class="col-sm-4 control-label"> </span> </div>
         <div class="form-group">
-          <label class="col-sm-2 control-label" for="txtPtAddress"> Address * </label>
+          <label class="col-sm-3 control-label" for="txtPtAddress"> Current Address * </label>
           <div class="col-sm-6">
             <textarea name="txtPtAddress" id="txtPtAddress" class="form-control"><?php echo $p_address;?></textarea>
           </div>
           <span class="col-sm-4 control-label"> </span> </div>
         <div class="form-group">
-          <label class="col-sm-2 control-label" for="txtPtReligion"> Religion </label>
+          <label class="col-sm-3 control-label" for="txtPtPermanentAddress"> Permanent Address * </label>
+          <div class="col-sm-6">
+            <textarea name="txtPtPermanentAddress" id="txtPtPermanentAddress" class="form-control"><?php echo $p_permanentaddress;?></textarea>
+          </div>
+          <span class="col-sm-4 control-label"> </span> </div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label" for="txtPtReligion"> Religion </label>
           <div class="col-sm-6">
             <select class="form-control" id="txtPtReligion" name="txtPtReligion">
               <option value="">--Select--</option>
@@ -200,34 +224,34 @@ function uploadImage(){
           </div>
           <span class="col-sm-4 control-label"> </span> </div>
         <div class="form-group">
-          <label class="col-sm-2 control-label" for="txtPtImage">Image</label>
+          <label class="col-sm-3 control-label" for="txtPtImage">Image</label>
           <div class="col-sm-6" align="left"> <img src="<?php echo $image; ?>" style="height:100px;width:100px;" id="output"/>
             <input type="hidden" name="img_exist" value="<?php echo $img_track; ?>" />
           </div>
           <span class="col-sm-4 control-label"> </span> </div>
         <div class="form-group">
-          <label class="col-sm-2 control-label col-xs-8 col-md-2" for="photo"> Upload </label>
+          <label class="col-sm-3 control-label col-xs-8 col-md-3" for="photo"> Upload </label>
           <!-- <div class="col-sm-4 col-xs-6 col-md-4">
               <input disabled="" placeholder="Choose File" id="uploadFile" class="form-control">
             </div>-->
-          <div class="col-sm-2 col-xs-6 col-md-2">
+          <div class="col-sm-3 col-xs-6 col-md-2">
             <div class="fileUpload btn btn-success form-control"> <span class="fa fa-repeat"></span> <span>Upload</span>
               <input type="file" name="fStImage" class="upload" onchange="loadFile(event)" id="fStImage">
             </div>
           </div>
           <span class="col-sm-4 control-label col-xs-6 col-md-4"> </span> </div>
-        <div class="form-group">
+        <!-- <div class="form-group">
           <label class="col-sm-2 control-label" for="txtPtProfileName"> Profile Name * </label>
           <div class="col-sm-6">
-            <input type="text" value="<?php echo $p_profile_name;?>" name="txtPtProfileName" id="txtPtProfileName" class="form-control">
+            <input type="text" value="<?php //echo $p_profile_name;?>" name="txtPtProfileName" id="txtPtProfileName" class="form-control">
           </div>
           <span class="col-sm-4 control-label"> </span> </div>
         <div class="form-group">
           <label class="col-sm-2 control-label" for="PtPassword"> Password * </label>
           <div class="col-sm-6">
-            <input type="password" value="<?php echo $p_password;?>" name="PtPassword" id="PtPassword" class="form-control">
+            <input type="password" value="<?php //echo $p_password;?>" name="PtPassword" id="PtPassword" class="form-control">
           </div>
-          <span class="col-sm-4 control-label"> </span> </div>
+          <span class="col-sm-4 control-label"> </span> </div> -->
         <div class="form-group">
           <div class="col-sm-offset-2 col-sm-8">
             <input type="submit" value="<?php echo $button_text;?>" class="btn btn-success">
@@ -267,16 +291,16 @@ function validationForm(){
 		$("#txtPtAddress").focus();
 		return false;
 	}
-	else if($("#txtPtProfileName").val() == ''){
-		alert("Profile Name is Required !!!");
-		$("#txtPtProfileName").focus();
-		return false;
-	}
-	else if($("#PtPassword").val() == ''){
-		alert("Password is Required !!!");
-		$("#PtPassword").focus();
-		return false;
-	}
+	// else if($("#txtPtProfileName").val() == ''){
+	// 	alert("Profile Name is Required !!!");
+	// 	$("#txtPtProfileName").focus();
+	// 	return false;
+	// }
+	// else if($("#PtPassword").val() == ''){
+	// 	alert("Password is Required !!!");
+	// 	$("#PtPassword").focus();
+	// 	return false;
+	// }
 	else{
 		return true;
 	}

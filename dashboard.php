@@ -27,10 +27,10 @@ if(isset($_SESSION['login_type']) && $_SESSION['login_type'] != 'admin'){
       <div class="link_box_img dashboard_image"><a href="<?php echo WEB_URL; ?>student/student_list.php"><img height="80" width="80" src="<?php echo WEB_URL; ?>img/student.png"></a></div>
       <div class="link_box_text">Student</div>
     </div>
-    <div class="link_box">
+    <!-- <div class="link_box">
       <div class="link_box_img dashboard_image"><a href="<?php echo WEB_URL; ?>user/user_list.php"><img height="80" width="80" src="<?php echo WEB_URL; ?>img/user.png"></a></div>
       <div class="link_box_text">Employee</div>
-    </div>
+    </div> -->
     <div class="link_box">
       <div class="link_box_img dashboard_image"><a href="<?php echo WEB_URL; ?>class/class_list.php"><img height="80" width="80" src="<?php echo WEB_URL; ?>img/class.png"></a></div>
       <div class="link_box_text">Class</div>
@@ -59,30 +59,30 @@ if(isset($_SESSION['login_type']) && $_SESSION['login_type'] != 'admin'){
       <div class="link_box_img dashboard_image"><a href="<?php echo WEB_URL; ?>attendance/addattendance.php"><img height="80" width="80" src="<?php echo WEB_URL; ?>img/attendance.png"></a></div>
       <div class="link_box_text">Attendance</div>
     </div>
-    <div class="link_box">
+    <!-- <div class="link_box">
       <div class="link_box_img dashboard_image"><a href="<?php echo WEB_URL; ?>library/library.php"><img height="80" width="80" src="<?php echo WEB_URL; ?>img/library.png"></a></div>
       <div class="link_box_text">Library</div>
-    </div>
-    <div class="link_box">
+    </div> -->
+    <!-- <div class="link_box">
       <div class="link_box_img dashboard_image3"><a href="<?php echo WEB_URL; ?>transport/transport.php"><img height="80" width="80" src="<?php echo WEB_URL; ?>img/transport.png"></a></div>
       <div class="link_box_text">Transport</div>
-    </div>
-    <div class="link_box">
+    </div> -->
+    <!-- <div class="link_box">
       <div class="link_box_img dashboard_image2"><a href="<?php echo WEB_URL; ?>hostel/hostel.php"><img height="80" width="80" src="<?php echo WEB_URL; ?>img/hostel.png"></a></div>
       <div class="link_box_text">Hostel</div>
-    </div>
+    </div> -->
     <div class="link_box">
       <div class="link_box_img dashboard_image"><a href="<?php echo WEB_URL; ?>account/account.php"><img height="80" width="80" src="<?php echo WEB_URL; ?>img/account.png"></a></div>
       <div class="link_box_text">Account</div>
     </div>
-    <div class="link_box">
+    <!-- <div class="link_box">
       <div class="link_box_img dashboard_image"><a href="<?php echo WEB_URL; ?>notice/notice_list.php"><img height="80" width="80" src="<?php echo WEB_URL; ?>img/notice.png"></a></div>
       <div class="link_box_text">Notice</div>
-    </div>
-    <div class="link_box">
+    </div> -->
+    <!-- <div class="link_box">
       <div class="link_box_img dashboard_image"><a href="<?php echo WEB_URL; ?>report/report.php"><img height="80" width="80" src="<?php echo WEB_URL; ?>img/report.png"></a></div>
       <div class="link_box_text">Report</div>
-    </div>
+    </div> -->
     <div class="link_box">
       <div class="link_box_img dashboard_image"><a href="<?php echo WEB_URL; ?>settings/setting.php"><img height="80" width="80" src="<?php echo WEB_URL; ?>img/setting.png"></a></div>
       <div class="link_box_text">Settings</div>
