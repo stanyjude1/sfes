@@ -806,6 +806,8 @@ CREATE TABLE IF NOT EXISTS `tbl_student_attendance` (
   PRIMARY KEY (`aid`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
+ALTER TABLE `tbl_student_attendance` ADD `afternoon` INT(1) NOT NULL DEFAULT '0' AFTER `attendance`;
+
 -- --------------------------------------------------------
 
 --

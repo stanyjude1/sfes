@@ -30,6 +30,9 @@ if(isset($_GET['sid'])){
 if(isset($_GET['date'])){
 	$date = $_GET['date'];
 }
+if(isset($_GET['time'])){
+  $time = $_GET['time'];
+}
 ?>
 <link type="text/css" href="<?php echo WEB_URL; ?>css/bootstrap.css" rel="stylesheet" />
 <div class="content">
@@ -40,7 +43,7 @@ if(isset($_GET['date'])){
     <div class="main_content_left">
       <div><img height="200" width="200" src="<?php echo WEB_URL; ?>img/charge.png"/></div>
       <div class="my_button"><a class="btn btn_back btn-success" href="<?php echo WEB_URL; ?>dashboard.php">Dashboard</a></div>
-      <div class="my_button"><a class="btn btn_back btn-success" href="<?php echo WEB_URL; ?>attendance/viewattendance.php">View Attendence</a></div>
+      <!-- <div class="my_button"><a class="btn btn_back btn-success" href="<?php echo WEB_URL; ?>attendance/viewattendance.php">View Attendence</a></div> -->
     </div>
     <form id="frmAddMark" action="../ajax/addStudentAtt.php" method="post">
       <div class="frmstyle">
@@ -51,10 +54,11 @@ if(isset($_GET['date'])){
               <select class="form-control" id="dllStClassId" name="dllStClassId">
                 <option value="">--Select--</option>
                 <?php 
-				  	$result_class = mysql_query("SELECT * FROM tbl_add_class order by c_id ASC",$link);
-					while($row_class = mysql_fetch_array($result_class)){
-				  ?>
-                <option <?php if($sf_class_id == $row_class['c_id']){echo 'selected';}?> value="<?php echo $row_class['c_id'];?>"><?php echo $row_class['c_name'];?></option>
+                  $result_class = mysql_query("SELECT * FROM tbl_add_class order by c_id ASC",$link);
+
+                  while($row_class = mysql_fetch_array($result_class)){
+				        ?>
+                    <option <?php if($sf_class_id == $row_class['c_id']){echo 'selected';}?> value="<?php echo $row_class['c_id'];?>"><?php echo $row_class['c_name'];?></option>
                 <?php } //mysql_close($link);?>
               </select>
             </div>
@@ -65,6 +69,17 @@ if(isset($_GET['date'])){
               <input type="text" value="<?php echo $date; ?>" name="txtDate" id="txtDate" class="form-control datepicker">
             </div>
 			</div>
+      <div class="form-group">
+            <label class="col-sm-2 control-label" for="txtDate"> Date </label>
+            <div class="col-sm-6">
+              <select class="form-control" id="dllStDayType" name="dllStDayType">
+                <option value="">--Select--</option>
+                <option value="Forenoon" <?php if($time == "Forenoon") echo "selected";?>>Forenoon</option>
+                <option value="Afternoon" <?php if($time == "Afternoon") echo "selected";?>>Afternoon</option>
+                <option value="Full Day" <?php if($time == "Full Day") echo "selected";?>>Full Day</option>
+              </select>
+            </div>
+      </div>
 			<div class="form-group">
             <div class="col-sm-offset-2 col-sm-8">
               <input type="button" onclick="getStudentInfoByAtt();" value="<?php echo $button_text;?>" class="btn btn-success">
@@ -79,7 +94,7 @@ if(isset($_GET['date'])){
                 <th>Name</th>
                 <th>Email</th>
                 <th>Contact</th>
-                <th>Attendance</th>
+                <th>Attendance | <?php if($time != '') echo $time;?></th>
               </tr>
             </thead>
             <tbody>
@@ -96,7 +111,7 @@ if(isset($_GET['date'])){
                 <td><?php echo $row['s_name']; ?></td>
                 <td><?php echo $row['s_email']; ?></td>
                 <td><?php echo $row['s_contact']; ?></td>
-                <td><input type="checkbox" id="txt_<?php echo $row['s_id']; ?>" style="text-align:center" <?php if(isset($row['attendance']) && $row['attendance'] == '1'){echo 'checked';}?> value="<?php echo $row['s_roll_no']; ?>" name="attendance[<?php echo $row['s_id']; ?>]" /></td>
+                <td><input type="checkbox" id="txt_<?php echo $row['s_id']; ?>" style="text-align:center" <?php if(isset($row['attendance']) && $row['attendance'] == '1'){echo 'checked';}?> value="<?php echo $row['s_roll_no']; ?>" name="attendance[<?php echo $row['s_id']; ?>]" checked/></td>
               </tr>
               <?php } mysql_close($link); ?>
             </tbody>
@@ -119,11 +134,12 @@ if(isset($_GET['date'])){
 	function getStudentInfoByAtt(){
 		var class_id = $("#dllStClassId").val();
 		var date = $("#txtDate").val();
-		if(class_id != '' && date != ''){
-			window.location = "<?php echo WEB_URL;?>attendance/addattendance.php?cid=" + class_id +'&date='+ date;
+    var time = $("#dllStDayType").val();
+		if(class_id != '' && date != '' && time !=''){
+			window.location = "<?php echo WEB_URL;?>attendance/addattendance.php?cid=" + class_id +'&date='+ date + '&time=' + time;
 		}
 		else{
-			alert('Please select two field');
+			alert('Please select all fields');
 		}
 	}
 	function submitStudentMark(){

@@ -6,11 +6,20 @@
 	if(isset($_POST['attendance'])){
 		$class_id = $_POST['dllStClassId'];
 		$sdate = $_POST['txtDate'];
+		$time = $_POST['dllStDayType'];
 		$amonth = date('m');
 		$ayear = date('Y');
 		$sql = mysql_query("Delete from tbl_student_attendance where added_date = '" . (string)$sdate . "' and cid = '" . (int)$class_id . "' and a.a_month = '".date('F')."' and a.a_year = '".date('Y')."'");
 		foreach($_POST['attendance'] as $key => $value){
-			$sql = "INSERT INTO `tbl_student_attendance`(sid,cid,attendance,roll_no,added_date,a_month,a_year) VALUES('$key','$class_id','1',$value,'$sdate','$amonth','$ayear')";
+			if($time == "Forenoon"){
+				$sql = "INSERT INTO `tbl_student_attendance`(sid,cid,attendance,roll_no,added_date,a_month,a_year) VALUES('$key','$class_id','1',$value,'$sdate','$amonth','$ayear')";
+			}
+			if($time == "Afternoon"){
+				$sql = "INSERT INTO `tbl_student_attendance`(sid,cid,afternoon,roll_no,added_date,a_month,a_year) VALUES('$key','$class_id','1',$value,'$sdate','$amonth','$ayear')";
+			}
+			if($time == "Full Day"){
+				$sql = "INSERT INTO `tbl_student_attendance`(sid,cid,attendance,afternoon, roll_no,added_date,a_month,a_year) VALUES('$key','$class_id','1', '1',$value,'$sdate','$amonth','$ayear')";
+			}
 			mysql_query($sql,$link);
 		}
 		echo "Added Attendance Successfully";
